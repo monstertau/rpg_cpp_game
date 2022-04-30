@@ -1,0 +1,3 @@
+/Users/monstertau/CLionProjects/sample_sdl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/monstertau/CLionProjects/sample_sdl/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/monstertau/CLionProjects/sample_sdl/cmake-build-debug/CMakeFiles/sample_sdl.dir

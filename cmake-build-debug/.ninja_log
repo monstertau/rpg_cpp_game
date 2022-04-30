@@ -1,0 +1,6 @@
+# ninja log v5
+1	285	1651288528142913240	CMakeFiles/sample_sdl.dir/main.cpp.o	9c3d24d04d3c3440
+1	144	1651288318016638075	CMakeFiles/sample_sdl.dir/TextureManager.cpp.o	ae14690daa9c869f
+294	324	1651288559906568398	sample_sdl	b83571f6d58b259d
+2	294	1651288559875027876	CMakeFiles/sample_sdl.dir/App.cpp.o	cc0dd995d73d1b55
+1	283	1651288528140582302	CMakeFiles/sample_sdl.dir/Entity.cpp.o	a46af8f010590e37
