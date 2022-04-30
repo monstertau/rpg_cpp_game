@@ -5,25 +5,24 @@
 #include <SDL2/SDL_image.h>
 #include<iostream>
 #include "Entity.h"
+#include "Map.h"
 
 using namespace std;
 
-#ifndef SAMPLE_SDL_APP_H
-#define SAMPLE_SDL_APP_H
 
 
 class App {
-private:
-    char *characterFileName = "download.png";
+public:
     const int FPS = 60;
     const int frameDelay = 1000 / FPS;
 
     Entity *entity = NULL;
     bool Running = true;
     SDL_Window *window = NULL;
-    SDL_Renderer *renderer = NULL;
-    const int HEIGHT = 768;
-    const int WIDTH = 1024;
+    Map *map = NULL;
+    SDL_Renderer *renderer;
+    static const int HEIGHT = 768;
+    static const int WIDTH = 1024;
     int R = 0xff;
     int G = 0xff;
     int B = 0xff;
@@ -37,9 +36,6 @@ private:
 
     void Render();
 
-public:
     void Run();
 };
 
-
-#endif //SAMPLE_SDL_APP_H

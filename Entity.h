@@ -9,6 +9,7 @@
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include "TextureManager.h"
 
 using namespace std;
 
@@ -19,8 +20,9 @@ public:
     int x;
     int y;
     SDL_Texture *texture;
-    SDL_Renderer* renderer;
-    Entity(int x, int y, int w, int h, SDL_Texture *texture,SDL_Renderer* renderer) {
+    SDL_Renderer *renderer;
+
+    Entity(int x, int y, int w, int h, SDL_Texture *texture, SDL_Renderer *renderer) {
         this->x = x;
         this->y = y;
         this->w = w;
@@ -39,13 +41,14 @@ public:
             this->y = 0;
         }
     }
-    void Render(){
+
+    void Render() {
         SDL_Rect dest;
         dest.x = x;
         dest.y = y;
         dest.w = w;
         dest.h = h;
-        SDL_RenderCopy(renderer, texture, NULL, &dest);
+        TextureManager::Draw(texture, renderer, NULL, &dest);
     }
 };
 

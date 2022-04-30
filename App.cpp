@@ -17,18 +17,19 @@ bool App::Init() {
         cout << "SDL Createwindow error: " << SDL_GetError() << endl;
         return false;
     }
-    this->renderer = SDL_CreateRenderer(this->window, -1, 0);
+    renderer = SDL_CreateRenderer(this->window, -1, 0);
     if (renderer == NULL) {
         cout << "SDL create renderer error: " << SDL_GetError() << endl;
         return false;
     }
     SDL_Texture *playerTex = TextureManager::LoadTexture(
-            "/Users/monstertau/CLionProjects/sample_sdl/asset/character.png", this->renderer);
+            "/Users/monstertau/CLionProjects/sample_sdl/asset/character.png", renderer);
     if (playerTex == NULL) {
         cout << "SDL load texture error: " << SDL_GetError() << endl;
         return false;
     }
-    entity = new Entity(0, 0, 64, 64, playerTex,renderer);
+    entity = new Entity(0, 0, 64, 64, playerTex, renderer);
+    map = new Map(renderer, 64);
     return true;
 }
 
@@ -64,6 +65,7 @@ void App::OnEvent(SDL_Event *event) {
 void App::Render() {
     SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer, R, G, B, A);
+    map->LoadMap("/Users/monstertau/CLionProjects/sample_sdl/asset/map01.dat",25,25);
     entity->Render();
     SDL_RenderPresent(renderer);
 }
